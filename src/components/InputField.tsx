@@ -17,7 +17,7 @@ const InputField = ({ todo, setTodo, handleAdd }: props) => {
       }}
     >
       <input
-        // ref={inputRef}
+        ref={inputRef}
         type="text"
         placeholder="Enter a task"
         className="input__box"
