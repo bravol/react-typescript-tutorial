@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Todo } from "../model";
 
 type Props = {
+  index: number;
   todo: Todo;
   todos: Array<Todo>;
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;

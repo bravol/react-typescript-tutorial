@@ -5,15 +5,25 @@ import SingleTodo from "./SingleTodo";
 interface props {
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  CompletedTodos: Todo[];
 }
-const TodoList: React.FC<props> = ({ todos, setTodos }) => {
+
+const TodoList: React.FC<props> = ({
+  todos,
+  setTodos,
+  CompletedTodos,
+  setCompletedTodos,
+}) => {
   return (
-    <div className="todos">
-      {todos.map((todo) => (
+    <div className={`todos `}>
+      <span className="todos__heading">Active Tasks</span>
+      {todos?.map((todo, index) => (
         <SingleTodo
+          index={index}
+          todos={todos}
           todo={todo}
           key={todo.id}
-          todos={todos}
           setTodos={setTodos}
         />
       ))}
